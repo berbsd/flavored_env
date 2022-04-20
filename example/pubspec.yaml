@@ -1,0 +1,16 @@
+name: flavored_env_usage
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+publish_to: none
+# homepage: https://www.example.com
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flavored_env:
+    path: ../
+
+dev_dependencies:
+  test: ^1.16.0
+  very_good_analysis: ^2.4.0

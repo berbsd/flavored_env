@@ -1,0 +1,81 @@
+output_formats:
+  dotenv:
+    # Dotenv output options
+    build_to:
+      - functions
+  dart:
+    # Dart output options
+    build_to:
+      - "functions/lib/config"
+    class_name: "FlavoredEnv"
+
+  typescript:
+    # Typescript output options
+    build_to:
+      - "functions/src"
+
+flavors:
+  default:
+    keys:
+      DEFAULT_TARGET_HOURS:
+        value: 16
+        info: Default target hours
+
+      COLLECTION_USER_PROFILES:
+        value: "users"
+        info: collection of user profiles
+
+      COLLECTION_AVATARS:
+        value: "avatars"
+        info: collection of user avatars
+
+      COLLECTION_APP_USERS:
+        value: "app-users"
+        info: collection for app-wide information
+
+      DOCUMENT_APP_USERS_TOTAL:
+        value: "users-total"
+        info: document holding total users
+
+      COLLECTION_TRACKERS:
+        value: "trackers"
+        info: collection of active trackers
+
+      DOCUMENT_APP_USERS_FASTING:
+        value: "users-fasting"
+        info: document holding total fasting users
+
+      COLLECTION_USER_SESSIONS:
+        value: "sessions"
+        info: collection of sessions for user
+
+      DEBUG_DELAY:
+        value: 0
+        info: A delay in milliseconds used for testing
+
+      SLACK_WEBHOOK_BASE_URL:
+        value: "https://hooks.slack.com/services/T037QP90QN9"
+        info: Slack webhook base URL
+
+  staging:
+    keys:
+      SLACK_SIGNUPS_WEBHOOK:
+        value: "B038C5B2A15/3ysdlkf5SrJOF2pqoGvV078gHB"
+        info: Slack webhook for user sign-up notification
+
+      DEBUG_DELAY:
+        value: 1000
+        info: A delay in milliseconds used for testing
+
+  development:
+    keys:
+      SLACK_SIGNUPS_WEBHOOK:
+        value: "GEW7QTHPW77/SQqmocFslk32ORQXqR7qyqI"
+        info: Slack webhook for user sign-up notification
+
+      DEBUG_DELAY:
+        value: 4000
+        info: A delay in milliseconds used for testing
+
+  production:
+    keys:
