@@ -1,3 +1,5 @@
+## 0.6.0 
+- Code refactoring
 ## 0.5.0
 - Add typescript file to access all the dotenv files. 
 - Code refactoring
