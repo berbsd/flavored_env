@@ -1,3 +1,5 @@
+## 0.6.0-dev.2
+- Downgrade path package to be compatible with flutter_test
 ## 0.6.0-dev.1
 - Rewrite using mason brick console_program
 ## 0.5.0

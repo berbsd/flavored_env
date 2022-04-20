@@ -1,6 +1,6 @@
 name: flavored_env
 description: A utility to generate matching dotenv and dart configuration files.
-version: 0.6.0-dev.1
+version: 0.6.0-dev.2
 homepage: https://github.com/berbsd/flavored_env
 repository: https://github.com/berbsd/flavored_env.git
 
@@ -15,7 +15,7 @@ dependencies:
   dart_style: ^2.2.3
   mason_logger: ^0.1.0-dev.7
   meta: ^1.7.0
-  path: ^1.8.1
+  path: ^1.8.0
   recase: ^4.0.0
   yaml: ^3.1.0
 
