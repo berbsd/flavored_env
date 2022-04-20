@@ -2,14 +2,9 @@
 
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
-
-
-
-
-[![ci][ci_badge]][ci_link]
 [![coverage][coverage_badge]][ci_link]
 [![pub package][pub_badge]][pub_link]
-[![License: MIT][license_badge]][license_link]
+[![ci][ci_badge]][ci_link]
 
 
 Generate and synchronize dotenv and dart configuration classes for your firebase application.
