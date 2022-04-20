@@ -2,9 +2,9 @@ name: flavored_env
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -19,14 +19,13 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: dart pub get
-        
-      # Uncomment this step to verify the use of 'dart format' on each commit.
-      # - name: ✨ Check Formatting
-      # run: dart format --output=none --set-exit-if-changed .
 
-#       - name: 🕵️ Analyze
-#         run: dart analyze lib
-#         run: dart analyze --fatal-infos --fatal-warnings lib
+      # Uncomment this step to verify the use of 'dart format' on each commit.
+      - name: ✨ Check Formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: 🕵️ Analyze
+        run: dart analyze --fatal-infos --fatal-warnings lib
 
       - name: 🧪 Run Tests
         run: |
@@ -37,5 +36,4 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v1
         with:
           path: ./coverage/lcov.info
-          min_coverage: 80
-
+          min_coverage: 60
