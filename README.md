@@ -52,68 +52,56 @@ The default sample will look like this
 ```yaml
 # flavored_env example
 
-dotenv_to:  
-  # list of existing subfolders where to generate the .env files. 
-  - lib/config
-  - functions
+output_formats:
+  dotenv:
+    # Dotenv output options
+    build_to:
+      - functions
+  dart:
+    # Dart output options
+    build_to:
+      - "functions/lib/config"
+    class_name: "FlavoredEnv"
 
-class_to:
-  # List of existing subfolders where to generate the dart config files.
-  - lib  # (default)
-  - lib/config
-
-# Name of the dart class to encaspulate all the constants. The same class
-# is generated for each flavor, but the file name will have a _<flavor> suffix  
-class_name: EnvConfig
+  typescript:
+    # Typescript output options
+    build_to:
+      - "functions/src"
 
 flavors:
-# List of application flavors. 
   default:
-  # The default flavor will become .env.default 
     keys:
-      user_collection_name:              # key name
-        value: "users"                   # key value
-        info: "user collection name"     # optional info to keep with the output.   
+      COLLECTION_USER_PROFILES:
+        value: "users"
+        info: collection of user profiles
 
-      show_exception_on_crash:
-        value: false
-        info: "display exception to users upon app crash"
-        
-      additional_debug_timeout:
+      COLLECTION_AVATARS:
+        value: "avatars"
+        info: collection of user avatars
+
+      COLLECTION_USER_SESSIONS:
+        value: "sessions"
+        info: collection of sessions for user
+
+      DEBUG_DELAY:
         value: 0
-        info: "additional timeout added to the app for testing"
-        
+        info: A delay in milliseconds used for testing
+
+
+  staging:
+    keys:
+      DEBUG_DELAY:
+        value: 1000
+        info: A delay in milliseconds used for testing
+
   development:
-    # The development flavor will become .env.development 
     keys:
-      # the collection name will be propagated from the 'default' configuration for dart. 
+      DEBUG_DELAY:
+        value: 4000
+        info: A delay in milliseconds used for testing
 
-      show_exception_on_crash: # overriden constant for development.
-        value: true
-        info: "display exception to users upon app crash"
-        
-      additional_debug_timeout: # overriden constant for development.
-        value: 0
-        info: "additional timeout added to the app for testing"
-
-      slack_url: 
-        value: https://slack.com/abcd_dev
-        info: webhook url for development environment
-  beta:
-    keys:
-      slack_url: 
-        value: https://slack.com/jkdl_beta
-        info: webhook url for development environment
-        
   production:
     keys:
-      slack_url: 
-        value: https://slack.com/xyz_production
-        info: webhook url for development environment
-      
-      fancy_value_prod_only:
-        value: 42
-        info: constant only available in production
 
 ```
 
